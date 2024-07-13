@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Destination from './components/destination/Destination';
+import Feature from './components/feature/feature';
+import LandingPage from './components/LandingPage/LandingPage';
+import Discount from './components/discound/Discound';
+import './index.css'
+import Home from './page/Home';
+import { Route,Routes } from 'react-router';
+import Footer from './components/footer/Footer';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Home/>
+    <Routes>
+      <Route path='/landing' element={<LandingPage/>}/>
+      <Route path='/feature' element={<Feature/>}/>
+      <Route path='/destination' element={<Destination/>}/>
+      <Route path='/deals' element={< Discount/>}/>
+    
+
+    </Routes>
+
+     
     </div>
   );
 }
